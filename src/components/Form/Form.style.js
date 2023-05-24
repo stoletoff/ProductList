@@ -2,6 +2,16 @@ import styled from 'styled-components';
 
 import { Form, Field } from 'formik';
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  width: 100%;
+`;
+
 export const FormStyle = styled(Form)`
   display: flex;
   flex-direction: column;
@@ -11,6 +21,7 @@ export const FormStyle = styled(Form)`
   margin-left: 0 auto;
   margin-right: 0 auto;
   padding: 0;
+  width: 100%;
 `;
 
 export const InputName = styled(Field)`
@@ -19,9 +30,13 @@ export const InputName = styled(Field)`
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 150px;
+  width: 100%;
   padding: 10px;
   border-radius: 25px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: thick double #3e8e41;
 `;
 
 export const InputLabel = styled.label`
@@ -34,22 +49,14 @@ export const InputLabel = styled.label`
 
   padding: 5px 15px;
   border-radius: 25px;
-  width: 300px;
-  border: 2px solid green;
+  max-width: 350px;
+  
   :not(:last-child) {
     margin-bottom: 10px;
   }
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: aliceblue;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
-`;
+
 
 export const AddButton = styled.button`
   display: flex;
@@ -79,7 +86,11 @@ export const AddButton = styled.button`
 `;
 
 export const Text = styled.p`
+  margin: 0 auto;
   margin-bottom: 10px;
+  font-size: 22px;
+  font-style: oblique;
+  color: tomato;
 `;
 
 export const BtnText = styled.p`
