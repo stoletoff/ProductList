@@ -36,8 +36,8 @@ export const InputLabel = styled.label`
   border-radius: 25px;
   width: 300px;
   border: 2px solid green;
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  :not(:last-child) {
+    margin-bottom: 10px;
   }
 `;
 
@@ -51,7 +51,7 @@ export const Wrapper = styled.div`
   margin-right: 0 auto;
 `;
 
- export const AddButton = styled.button`
+export const AddButton = styled.button`
   display: flex;
   align-items: center;
   text-align: center;
@@ -76,4 +76,16 @@ export const Wrapper = styled.div`
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+`;
+
+export const Text = styled.p`
+  margin-bottom: 10px;
+`;
+
+export const BtnText = styled.p`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
 `;

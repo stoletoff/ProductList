@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Formik } from 'formik';
-import { FormStyle, InputName, InputLabel, Wrapper, AddButton } from './Form.style';
+import { FormStyle, InputName, InputLabel, Wrapper, AddButton, Text, BtnText } from './Form.style';
 export class Form extends Component {
   state = { productName: '', productQuantity: '' };
 
@@ -26,7 +26,7 @@ export class Form extends Component {
           <Wrapper>
           <FormStyle onSubmit={this.handleSubmit}>
             <InputLabel htmlFor="">
-              Наименование продукта:
+              <Text>Наименование продукта:</Text>
               <InputName
                 type="text"
                 name="productName"
@@ -35,7 +35,7 @@ export class Form extends Component {
               />
             </InputLabel>
             <InputLabel htmlFor="">
-              Количество:
+              <Text>Количество:</Text>
               <InputName
                 type="text"
                 name="productQuantity"
@@ -43,7 +43,7 @@ export class Form extends Component {
                 onChange={this.handleChange}
               />
             </InputLabel>
-            <AddButton type="submit">Добавить</AddButton>
+            <AddButton type="submit"><BtnText>Добавить</BtnText></AddButton>
           </FormStyle>
           </Wrapper>
         </Formik>
