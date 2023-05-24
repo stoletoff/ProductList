@@ -11,13 +11,19 @@ export class App extends Component {
     ],
   };
 
+  deleteProduct = productId => {
+    this.setState(prevState => ({
+      products: prevState.products.filter(product => product.id !== productId),
+    }));
+  };
+
   render() {
     const { products } = this.state;
 
     return (
       <Wrapper>
         <Header>ProductList</Header>
-        <Products products={products} />
+        <Products products={products} onDeleteProduct={this.deleteProduct}/>
       </Wrapper>
     );
   }
