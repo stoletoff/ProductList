@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const ProductList = styled.ul`
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
   max-width: 390px;
 `;
 
@@ -11,8 +14,9 @@ export const ProductItem = styled.li`
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  margin: 0 auto;
-  padding: 15px 25px;
+  padding: 5px 15px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
   border-radius: 25px;
   width: 300px;
   border: 2px solid green;
