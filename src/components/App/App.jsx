@@ -1,8 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
 import { Products } from '../Products';
-import { Header, Wrapper } from './App.styled';
+import { Header, Wrapper, ModalBtn, CloseBtn } from './App.styled';
 import { Form } from '../Form';
+import { Modal } from '../Modal';
 import { nanoid } from 'nanoid';
 
 export class App extends Component {
@@ -12,6 +13,13 @@ export class App extends Component {
       { id: 'id-2', text: 'Milk', quantity: 1, completed: false },
       { id: 'id-3', text: 'Chocolate', quantity: 1, completed: false },
     ],
+    showModal: false,
+  };
+
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
   };
 
   deleteProduct = productId => {
@@ -81,7 +89,7 @@ export class App extends Component {
   // Стадия размонтирования - componentWillUnmount - при удалении компонента из DOM.
 
   render() {
-    const { products } = this.state;
+    const { products, showModal } = this.state;
 
     // Filter
     // const completedProducts = products.filter(product => product.completed.length);
@@ -97,6 +105,14 @@ export class App extends Component {
 
     return (
       <Wrapper>
+        <ModalBtn type="button" onClick={this.toggleModal}>Открыть модалку</ModalBtn>
+        {showModal && (
+          <Modal onClose={this.toggleModal}>
+            <h1>I`m modal window</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <CloseBtn type="button" onClick={this.toggleModal}>Закрыть</CloseBtn>
+          </Modal>
+        )}
         <Header>Продуктовый список</Header>
         <Form onSubmit={this.formSubmitHandler}></Form>
         <Products
