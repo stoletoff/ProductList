@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Formik } from 'formik';
-import { FormStyle, InputName, InputLabel, Wrapper, AddButton, Text, BtnText } from './Form.style';
+import { FormStyle, InputName, InputLabel, Wrapper,  Text } from './Form.style';
+import { IconBtn } from 'components/iconBtn';
+import {ReactComponent as AddItem} from '../../icons/plus.svg'
 export class Form extends Component {
   state = { productName: '', productQuantity: '' };
 
@@ -43,11 +45,11 @@ export class Form extends Component {
                 onChange={this.handleChange}
               />
             </InputLabel>
-            <AddButton type="submit"><BtnText>Добавить</BtnText></AddButton>
+            <IconBtn type="submit"><AddItem/></IconBtn>
           </FormStyle>
           </Wrapper>
         </Formik>
-      
+
     );
   }
 }

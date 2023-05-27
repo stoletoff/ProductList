@@ -1,8 +1,10 @@
 import React from 'react';
+import { IconBtn } from '../iconBtn';
+import {ReactComponent as DeleteItem} from '../../icons/bin.svg'
 import {
   ProductName,
   ProductList,
-  DeleteButton,
+  // DeleteButton,
   ProductItem,
 } from './Product.styled';
 export const Products = ({ products, onDeleteProduct, onToggleCompleted }) => (
@@ -17,7 +19,8 @@ export const Products = ({ products, onDeleteProduct, onToggleCompleted }) => (
         />
         <ProductName>{text}</ProductName>
         <ProductName>{quantity}</ProductName>
-        <DeleteButton onClick={() => onDeleteProduct(id)}>Delete</DeleteButton>
+        <IconBtn onClick={() => onDeleteProduct(id)}><DeleteItem/></IconBtn>
+        {/* <DeleteButton onClick={() => onDeleteProduct(id)}>Delete</DeleteButton> */}
       </ProductItem>
     ))}
   </ProductList>

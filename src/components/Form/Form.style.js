@@ -30,7 +30,7 @@ export const InputName = styled(Field)`
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   padding: 10px;
   border-radius: 25px;
   padding: 12px 20px;

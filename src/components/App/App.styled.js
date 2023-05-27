@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   margin-left: 0 auto;
   margin-right: 0 auto;
 `;
@@ -30,7 +29,7 @@ export const ModalBtn = styled.button`
   border-radius: 24px;
   cursor: pointer;
   box-shadow: 0 9px #999;
-  background-color: grey;
+  background-color: green;
   &:hover,
   :focus {
     background-color: #3e8e41;
@@ -39,6 +38,8 @@ export const ModalBtn = styled.button`
 
 export const CloseBtn = styled.button`
   display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
   align-items: center;
   text-align: center;
   font-size: 16px;

@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { ModalFixed, ModalAbsolute } from './Modal.styled';
-
 export class Modal extends Component {
   hendleKeyDown = event => {
     if (event.code === 'Escape') {

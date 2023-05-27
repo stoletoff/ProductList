@@ -39,6 +39,7 @@ export class App extends Component {
     this.setState(prevState => ({
       products: [newProduct, ...prevState.products],
     }));
+    this.toggleModal();
   };
 
   // hendleInputChange = evenet => {
@@ -105,16 +106,19 @@ export class App extends Component {
 
     return (
       <Wrapper>
-        <ModalBtn type="button" onClick={this.toggleModal}>Открыть модалку</ModalBtn>
+        <Header>Продуктовый список</Header>
+        <ModalBtn type="button" onClick={this.toggleModal}>
+          Добавить позицию
+        </ModalBtn>
         {showModal && (
           <Modal onClose={this.toggleModal}>
-            <h1>I`m modal window</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <CloseBtn type="button" onClick={this.toggleModal}>Закрыть</CloseBtn>
+            <Form onSubmit={this.formSubmitHandler}></Form>
+            <CloseBtn type="button" onClick={this.toggleModal}>
+              Закрыть
+            </CloseBtn>
           </Modal>
         )}
-        <Header>Продуктовый список</Header>
-        <Form onSubmit={this.formSubmitHandler}></Form>
+
         <Products
           onToggleCompleted={this.toggleCompleted}
           products={products}
